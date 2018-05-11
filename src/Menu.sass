@@ -1,0 +1,35 @@
+$back-left: #ccff33
+$back-right: #ffff00
+$menu-color: #ffffff
+  
+#flyoutMenu
+  width: 100vw
+  height: 100vh
+  background: linear-gradient(to top right, $back-left 0%, $back-right 100%)
+  position: fixed
+  top: 0
+  left: 0
+  transition: transform .3s cubic-bezier(0, .52, 0, 1)
+  overflow: scroll
+  z-index: 1000
+
+  h2
+    a
+      color: $menu-color
+      margin-left: 15px
+      text-decoration: none
+      padding: 5px 10px
+      background: transparent
+      transition: all .3s ease
+
+      &:hover
+        background: $back-right
+        color: $back-left
+
+#flyoutMenu.hide
+  transform: translate3d(-100vw, 0, 0)
+
+#flyoutMenu.show
+  transform: translate3d(0vw, 0, 0)
+  overflow: hidden
+
