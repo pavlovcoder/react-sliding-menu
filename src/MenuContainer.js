@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import MenuButton from './MenuButton';
+import Menu from './Menu';
 
 class MenuContainer extends Component {
   constructor(props, context) {
@@ -30,6 +32,8 @@ class MenuContainer extends Component {
   render() {
     return (
       <div>
+        <MenuButton handleMouseDown={this.handleMouseDown}/>
+        <Menu handleMouseDown={this.handleMouseDown} menuVisibility={this.state.visible}/>
         <h3>My favorite books of 2018 year :P</h3>
         <ul>
           <li>
